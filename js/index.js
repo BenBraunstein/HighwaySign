@@ -17,6 +17,20 @@ function buttonClick() {
   window.location.reload();
 }
 
+function rightArrow() {
+  myMessage1 = textToLED('>>>>>>>>>>>>>>>>>>>>>>>')
+  furthestLeftPoint1 = 0 - myMessage1.length;
+  leftPointer = SCROLLER_LENGTH + 1;
+  draw1();
+}
+
+function leftArrow() {
+  myMessage1 = textToLED('<<<<<<<<<<<<<<<<<<<<<<<')
+  furthestLeftPoint1 = 0 - myMessage1.length;
+  leftPointer = SCROLLER_LENGTH + 1;
+  draw1();
+}
+
 theInput1.change(function () {
   myMessage1 = textToLED(this.value);
   furthestLeftPoint1 = 0 - myMessage1.length;
@@ -415,7 +429,18 @@ function charToLED(theChar) {
       [true, true, true, false, false, false, false],
       [false, false, false, false, false, false, false]];
       break;
-
+    case '>':
+      theLed = [[true, false, false, false, false, false, true],
+      [false, true, false, false, false, true, false],
+      [false, false, true, false, true, false, false],
+      [false, false, false, true, false, false, false]];
+      break;
+    case '<':
+      theLed = [[false, false, false, true, false, false, false],
+      [false, false, true, false, true, false, false],
+      [false, true, false, false, false, true, false],
+      [true, false, false, false, false, false, true]];
+      break;
 
     //BLANK CASE
     // case 'f':
